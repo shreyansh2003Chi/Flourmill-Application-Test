@@ -1,36 +1,3 @@
-// import 'package:flutter/material.dart';
-//
-// class CustomTextField extends StatelessWidget {
-//   final String label;
-//   final String hintText;
-//   final TextEditingController controller;
-//   final IconData prefixIcon;
-//
-//   const CustomTextField({super.key,
-//     required this.label,
-//     required this.hintText,
-//     required this.controller,
-//     required this.prefixIcon,
-//   });
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return TextFormField(
-//       controller: controller,
-//       decoration: InputDecoration(
-//         prefixIcon: Icon(prefixIcon),
-//         border: OutlineInputBorder(
-//           borderRadius: BorderRadius.circular(15),
-//           borderSide: const BorderSide(
-//             color: Colors.black,
-//           ),
-//         ),
-//         labelText: label,
-//         hintText: hintText,
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {
