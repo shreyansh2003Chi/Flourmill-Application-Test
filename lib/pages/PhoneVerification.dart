@@ -2,6 +2,7 @@ import 'package:flourmill_testing/UIComponents/CustomButton.dart';
 import 'package:flourmill_testing/pages/OTPVerification.dart';
 import 'package:flutter/material.dart';
 import 'package:flourmill_testing/UIComponents/CustomTextField.dart';
+import 'package:lottie/lottie.dart';
 
 void main() {
   runApp(PhoneVerification());
@@ -31,12 +32,12 @@ class PhoneVerification extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(30.0, 80, 30.0, 5.0),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 150,
-                  width: 150,
-                  child: Image(
-                    image: AssetImage('assets/phoneverification.png'),
-                  ),
+                Lottie.asset(
+                  'animations/sendotpmess.json',
+                  width: 200,
+                  height: 200,
+                  repeat: true,
+                  fit: BoxFit.fill,
                 ),
                 const SizedBox(height: 10),
                 const Text(

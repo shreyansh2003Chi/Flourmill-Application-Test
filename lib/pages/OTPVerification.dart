@@ -1,4 +1,6 @@
+import 'package:flourmill_testing/UIComponents/CustomButton.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:pinput/pinput.dart';
 
 class OTPVerification extends StatelessWidget {
@@ -14,7 +16,7 @@ class OTPVerification extends StatelessWidget {
         color: Colors.black,
       ),
       decoration: BoxDecoration(
-        color: Colors.green.shade100,
+        color: const Color(0xFFDEE7F8),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: Colors.transparent),
       ),
@@ -22,7 +24,7 @@ class OTPVerification extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
-        title: const Text('OTP TextField'),
+        title: const Text('OTP has been sent to your number'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -32,19 +34,19 @@ class OTPVerification extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              const SizedBox(
+              Lottie.asset('animations/otp.json',
                   height: 150,
                   width: 150,
-                  child: Image(
-                    image: AssetImage("assets/otp.png"),
-                  )),
+                  repeat: true,
+                  reverse: true,
+                  fit: BoxFit.fill),
               Container(
-                margin: const EdgeInsets.symmetric(vertical: 40),
+                margin: const EdgeInsets.symmetric(vertical: 10),
                 child: const Text(
                   "Verification",
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 28,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -75,11 +77,19 @@ class OTPVerification extends StatelessWidget {
                 keyboardType: TextInputType.number,
                 focusedPinTheme: defaultPinTheme.copyWith(
                   decoration: defaultPinTheme.decoration!.copyWith(
-                    border: Border.all(color: Colors.green),
+                    border: Border.all(color: const Color(0xFF5382EF)),
                   ),
                 ),
                 onCompleted: (pin) => debugPrint(pin),
               ),
+              Container(
+                margin: const EdgeInsets.all(30),
+                child: CustomButton(
+                  label: "Confirm OTP",
+                  icon: Icons.check,
+                  onPressed: () {},
+                ),
+              )
             ],
           ),
         ),

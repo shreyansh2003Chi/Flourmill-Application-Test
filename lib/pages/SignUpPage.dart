@@ -1,3 +1,4 @@
+import 'package:flourmill_testing/pages/successfull_page.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -244,13 +245,12 @@ class _SignUpPageState extends State<SignUpPage> {
       Navigator.pop(context); // Dismiss the dialog
       return;
     }
-
     final success = await signUp(context, email, password, name);
     if (success) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const MyHomePage(),
+          builder: (context) => const AnimatedAcknowledge(),
         ),
       );
     } else {

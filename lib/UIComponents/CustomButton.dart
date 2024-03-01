@@ -47,7 +47,7 @@ class CustomButton extends StatelessWidget {
   final String label;
   final IconData icon;
   final VoidCallback onPressed;
-  final Color buttonColor; // New property to specify button color
+  final Color buttonColor;
 
   const CustomButton({
     Key? key,
@@ -66,8 +66,8 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           textStyle: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+            fontSize: 17,
+            fontWeight: FontWeight.w900,
           ),
           backgroundColor: buttonColor, // Use the specified button color
           shape: RoundedRectangleBorder(
@@ -77,9 +77,9 @@ class CustomButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(label),
+            Text(label, style: const TextStyle(color: Color(0xFF1D1F1F))),
             const SizedBox(width: 30),
-            Icon(icon),
+            Icon(icon,color: const Color(0xFF1D1F1F)),
           ],
         ),
       ),
